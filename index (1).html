@@ -1,0 +1,72 @@
+<?php 
+header('Content-Type: text/html; charset=utf-8');
+include 'auth.php'; 
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Control - INARPLAS</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="logo">&#127981; INARPLAS Produccion</div>
+    <div class="user-info">
+        Hola, <b><?php echo $_SESSION['nombre']; ?></b> | <a href="logout.php" style="color:white;">Cerrar Sesi&oacute;n</a>
+    </div>
+</div>
+
+<div class="main-container">
+    <!-- Menú Lateral -->
+    <div class="sidebar">
+        <h3>Men&uacute; Principal</h3>
+        <ul>
+            <li><a href="dashboard.php" class="active">&#127968; Inicio</a></li>
+            <li><a href="usuarios.php">&#128101; Empleados</a></li>
+            <li><a href="maquinas.php">&#9881; M&aacute;quinas</a></li>
+            <li><a href="productos.php">&#128230; Productos</a></li> <!-- CONECTADO -->
+            <li><a href="ordenes.php">&#128221; &Oacute;rdenes Prod.</a></li> <!-- CONECTADO -->
+            <li><a href="gestion_turno.php">&#9201; Gestionar Turno</a></li>
+            <li><a href="ver_registros.php">&#128202; Reportes</a></li>
+            <li><a href="tareas.php"><i class="fa-solid fa-list-check"></i> Tareas y Cronograma</a></li>
+        </ul>
+    </div>
+
+    <!-- Área de Trabajo -->
+    <div class="content">
+        <h1>Bienvenido al Sistema de Gesti&oacute;n</h1>
+        <p>Seleccione una opci&oacute;n del men&uacute; o use los accesos directos.</p>
+        
+        <div class="icon-grid">
+            <a href="gestion_turno.php" class="icon-card">
+                <div class="icon">&#9201;</div>
+                <div class="title">Gestionar Turno</div>
+            </a>
+            
+            <a href="ordenes.php" class="icon-card">
+                <div class="icon">&#128221;</div>
+                <div class="title">Crear Orden</div> <!-- CONECTADO -->
+            </a>
+
+            <a href="productos.php" class="icon-card">
+                <div class="icon">&#128230;</div>
+                <div class="title">Productos</div> <!-- CONECTADO -->
+            </a>
+            
+            <a href="usuarios.php" class="icon-card">
+                <div class="icon">&#128101;</div>
+                <div class="title">Usuarios</div>
+            </a>
+            
+             <a href="ver_registros.php" class="icon-card">
+                <div class="icon">&#128202;</div>
+                <div class="title">Ver Reportes</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
